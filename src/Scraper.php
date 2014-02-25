@@ -118,6 +118,7 @@ class Scraper
         $command .= ' --domains ' . $this->formatDirUri($this->baseUri);
         $command .= ' --no-parent';
         $command .= " --directory-prefix $wgetPath";
+        $command .= ' --output-file /dev/null';
 
         if ($this->getOption('quiet-wget')) {
             $command .= ' --quiet';
@@ -125,7 +126,7 @@ class Scraper
 
         $command .= " $this->baseUri";
 
-        exec($command);
+        shell_exec($command);
     }
 
     protected function getDocsPath()
