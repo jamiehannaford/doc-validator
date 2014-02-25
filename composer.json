@@ -1,0 +1,21 @@
+{
+    "name": "jamiehannaford/doc-validator",
+    "description": "Simple scraper for validating nested XML/JSON examples in HTML",
+    "minimum-stability": "stable",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Jamie Hannaford",
+            "email": "jamie.hannaford@rackspace.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DocValidator\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.4",
+        "psr/log": "1.0"
+    }
+}
