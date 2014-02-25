@@ -1,6 +1,7 @@
 .idea/
 .test/
 docs/
+log/
 vendor/
 
 *.lock

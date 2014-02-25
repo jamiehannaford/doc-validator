@@ -68,11 +68,12 @@ class Scraper
 
     protected function processArgs()
     {
-        $short = "u::s::q::";
+        $short = "u::s::q::l::";
         $long  = [
             'uri::',
             'skip-wget::',
-            'quiet-wget::'
+            'quiet-wget::',
+            'log-file::'
         ];
 
         $options = getopt($short, $long);
@@ -90,6 +91,10 @@ class Scraper
                 case 'q':
                 case 'quiet-wget':
                     $this->setOption('quiet-wget', true);
+                    break;
+                case 'l':
+                case 'log-file':
+                    $this->logger->setStream($this->getOutputStream($val));
                     break;
             }
         }
@@ -179,7 +184,7 @@ class Scraper
             if ($minutes > 0) {
                 $string .= "and ";
             }
-            $string .= "$seconds seconds.";
+            $string .= "$seconds seconds";
         }
 
         return $string ?: number_format($duration, 2) . ' seconds';
@@ -191,5 +196,20 @@ class Scraper
             '{count}' => $this->count,
             '{time}'  => $this->formatDuration()
         ]);
+
+        $this->logger->close();
+    }
+
+    protected function getOutputStream($file = null)
+    {
+        $logPath = __DIR__ . '/../log/';
+
+        if (!file_exists($logPath)) {
+            mkdir($logPath, 0777, true);
+        }
+
+        $logPath = $logPath . ($file ?: $this->baseUri . '.log');
+
+        return fopen($logPath, 'w');
     }
 }
