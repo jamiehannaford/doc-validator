@@ -1,1 +1,3 @@
-./doc-validator -udocs.rackspace.com -l < /dev/null &
+#!/bin/bash
+
+./bin/doc-validator -udocs.rackspace.com -l < /dev/null &
