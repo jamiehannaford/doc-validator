@@ -71,7 +71,8 @@ class Scraper
         $short = "u::s::q::";
         $long  = [
             'uri::',
-            'skip-wget::'
+            'skip-wget::',
+            'quiet-wget::'
         ];
 
         $options = getopt($short, $long);
@@ -109,10 +110,9 @@ class Scraper
         $command = 'wget';
         $command .= ' --recursive';
         $command .= ' --accept html';
-        $command .= " --domains $this->baseUri";
+        $command .= ' --domains ' . $this->formatDirUri($this->baseUri);
         $command .= ' --no-parent';
         $command .= " --directory-prefix $wgetPath";
-
 
         if ($this->getOption('quiet-wget')) {
             $command .= ' --quiet';
@@ -125,7 +125,7 @@ class Scraper
 
     protected function getDocsPath()
     {
-        return $this->formatDirUri($this->baseUri);
+        return $this->getWgetPrefix() . $this->formatDirUri($this->baseUri);
     }
 
     protected function getWgetPrefix()
@@ -135,8 +135,7 @@ class Scraper
 
     protected function formatDirUri($string)
     {
-        return $this->getWgetPrefix()
-            . trim(preg_replace('#https?://#', '', $string));
+        return trim(preg_replace('#https?://#', '', $string));
     }
 
     protected function traverseDirectory($directory)
