@@ -1,0 +1,1 @@
+./doc-validator -udocs.rackspace.com -l < /dev/null &
