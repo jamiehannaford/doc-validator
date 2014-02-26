@@ -61,3 +61,10 @@ You can then access the binary:
 ```bash
 ./vendor/bin/doc-validator -udocs.foo.com -q -l < /dev/null &
 ```
+
+Because you have left the `--log-file` flag empty, it will log everything to a
+default location:
+
+```
+./vendor/jamiehannaford/doc-validator/log/docs.foo.com/log
+```
