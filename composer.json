@@ -14,6 +14,11 @@
             "DocValidator\\": "src/"
         }
     },
+    "bin": [
+        "bin/doc-validator",
+        "bin/openstack",
+        "bin/rackspace"
+    ],
     "require": {
         "php": ">=5.4",
         "psr/log": "1.0"

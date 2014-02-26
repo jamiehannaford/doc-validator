@@ -43,3 +43,21 @@ Short|Long|Description|Default
 To run against docs.openstack.org, run: `./bin/openstack`
 
 To run against docs.rackspace.com, run: `./bin/rackspace`
+
+## Installation
+
+You will need to install this package with Composer:
+
+```bash
+# Install Composer executable
+curl -sS https://getcomposer.org/installer | php
+
+# Install package
+php composer.phar require jamiehannaford/doc-validator:dev-master
+```
+
+You can then access the binary:
+
+```bash
+./vendor/bin/doc-validator -udocs.foo.com -q -l < /dev/null &
+```
