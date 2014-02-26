@@ -66,5 +66,5 @@ Because you have left the `--log-file` flag empty, it will log everything to a
 default location:
 
 ```
-./vendor/jamiehannaford/doc-validator/log/docs.foo.com/log
+./vendor/jamiehannaford/doc-validator/log/docs.foo.com.log
 ```
