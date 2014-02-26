@@ -1,18 +1,15 @@
 doc-validator
 =============
 
-Simple scraper for validating nested XML/JSON examples in HTML.
+Simple scraper for validating nested XML/JSON examples in OpenStack/Rackspace doc files.
 
-This script does the following:
+## General outline
 
 1. Executes a recursive wget for a given URI. The process follows every link
 nested in a given piece of markup until every possible link is exhausted. It
-saves each remote URI to the local filesystem. It is saved to:
-
-./docs/docs.openstack.org
-
-Where `docs.openstack.org` is the root URI you specified. Only HTML files are
-saved, any other remote file type is omitted.
+saves each remote URI to the local filesystem. It is saved to
+`./docs/docs.openstack.org`, where `docs.openstack.org` is the root URI you
+specified. Only HTML files are saved, any other remote file type is omitted.
 
 2. Once the wget procedure is complete, the PHP script traverses the local
 directory recursively, scanning each HTML file for a given regex pattern. The
@@ -36,10 +33,10 @@ The main script you will need to run is:
 
 Short|Long|Description|Default
 ---|---|---|---
--u|--uri|The URI which wget points at|docs.rackspace.com
--s|--skip-wget|Instructs the script to skip the wget stage and check the local `./docs` version only|Disabled
--q|--quiet-wget|Instructs the script to silence the wget output|Disabled
--l|--log-file|Instructs the script to output everything to a provided file. If left empty, the filename will be the same as the root URI|Disabled
+`-u`|`--uri`|The URI which wget points at|docs.rackspace.com
+`-s`|`--skip-wget`|Instructs the script to skip the wget stage and check the local `./docs` version only|Disabled
+`-q`|`--quiet-wget`|Instructs the script to silence the wget output|Disabled
+`-l`|`--log-file`|Instructs the script to output everything to a provided file. If left empty, the filename will be the same as the root URI|Disabled
 
 ### Convenience scripts
 
