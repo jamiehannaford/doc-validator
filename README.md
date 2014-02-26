@@ -7,7 +7,7 @@ Simple scraper for validating nested XML/JSON examples in OpenStack/Rackspace do
 
 1. Executes a recursive wget for a given URI. The process follows every link
 nested in a given piece of markup until every possible link is exhausted. It
-saves each remote URI to the local filesystem. It is saved to
+saves each remote URI to the local filesystem. An example location might be:
 `./docs/docs.openstack.org`, where `docs.openstack.org` is the root URI you
 specified. Only HTML files are saved, any other remote file type is omitted.
 

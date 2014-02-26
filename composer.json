@@ -16,7 +16,6 @@
     },
     "require": {
         "php": ">=5.4",
-        "psr/log": "1.0",
-        "phpspec/phpspec": "2.0.*@dev"
+        "psr/log": "1.0"
     }
 }
