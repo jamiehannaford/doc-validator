@@ -53,7 +53,7 @@ You will need to install this package with Composer:
 curl -sS https://getcomposer.org/installer | php
 
 # Install package
-php composer.phar require jamiehannaford/doc-validator:dev-master
+php composer.phar require jamiehannaford/doc-validator:1.0
 ```
 
 You can then access the binary:
