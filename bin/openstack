@@ -1,3 +1,2 @@
 #!/bin/bash
-
-./bin/doc-validator -udocs.openstack.org -l < /dev/null &
+$( cd $(dirname $0) ; pwd -P )/doc-validator -udocs.openstack.org -l < /dev/null &
