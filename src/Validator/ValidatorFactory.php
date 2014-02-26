@@ -33,7 +33,7 @@ class ValidatorFactory
 
     protected static function isXml($string)
     {
-        return self::startsWith($string, '<?xml');
+        return self::startsWith($string, '<');
     }
 
     protected static function startsWith($string, $keyword)

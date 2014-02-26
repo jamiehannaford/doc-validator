@@ -15,7 +15,7 @@ class XmlValidator extends AbstractValidator
 
     public function outputError($errorCount)
     {
-        $message  = "ERROR {error}: Malformed XML";
+        $message  = "ERROR {error}: Malformed XML\n\n";
         $message .= "Path: {path}\n\n";
         $message .= "Sample:\n{sample}\n\n";
         $message .= "{delimeter}";
